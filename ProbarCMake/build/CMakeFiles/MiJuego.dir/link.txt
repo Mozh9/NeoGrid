@@ -1,3 +1,0 @@
-C:\msys64\ucrt64\bin\cmake.exe -E rm -f CMakeFiles\MiJuego.dir/objects.a
-C:\msys64\ucrt64\bin\ar.exe qc CMakeFiles\MiJuego.dir/objects.a @CMakeFiles\MiJuego.dir\objects1.rsp
-C:\msys64\ucrt64\bin\c++.exe -Wl,--whole-archive CMakeFiles\MiJuego.dir/objects.a -Wl,--no-whole-archive -o MiJuego.exe -Wl,--out-implib,libMiJuego.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\MiJuego.dir\linkLibs.rsp

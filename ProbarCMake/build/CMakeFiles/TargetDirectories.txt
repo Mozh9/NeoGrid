@@ -1,9 +1,0 @@
-C:/Users/J/Desktop/RPG_Consola/ProbarCMake/build/CMakeFiles/MiJuego.dir
-C:/Users/J/Desktop/RPG_Consola/ProbarCMake/build/CMakeFiles/package.dir
-C:/Users/J/Desktop/RPG_Consola/ProbarCMake/build/CMakeFiles/package_source.dir
-C:/Users/J/Desktop/RPG_Consola/ProbarCMake/build/CMakeFiles/edit_cache.dir
-C:/Users/J/Desktop/RPG_Consola/ProbarCMake/build/CMakeFiles/rebuild_cache.dir
-C:/Users/J/Desktop/RPG_Consola/ProbarCMake/build/CMakeFiles/list_install_components.dir
-C:/Users/J/Desktop/RPG_Consola/ProbarCMake/build/CMakeFiles/install.dir
-C:/Users/J/Desktop/RPG_Consola/ProbarCMake/build/CMakeFiles/install/local.dir
-C:/Users/J/Desktop/RPG_Consola/ProbarCMake/build/CMakeFiles/install/strip.dir
