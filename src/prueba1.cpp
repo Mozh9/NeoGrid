@@ -4,7 +4,7 @@
  * Creo que al final de reaccionar input pestana 2 hay que agregar una función que se asegure la camara no intente salirse del mapa*/
 
 #define MINIAUDIO_IMPLEMENTATION
-#include "miniaudio.h"
+#include "../include/miniaudio.h"
 #include <iostream>
 #include <cstdlib>
 #include <vector>
@@ -118,11 +118,11 @@ void cargarDatos(){
 	//pantalla de carga
 	cout << "Cargando datos 0%" << endl;
 
-	archivoTxtA_Vector("../Asets/Menu.txt", mapaMenu);
+	archivoTxtA_Vector("../assets/Menu.txt", mapaMenu);
 	cout << "Menu Cargado" << endl;
 	cout << "Cargando datos 50%" << endl;
 
-	archivoTxtA_Vector("../Asets/Mapa.txt", tileMap);
+	archivoTxtA_Vector("../assets/Mapa.txt", tileMap);
 	cout << "TileMap Cargado" << endl;
 	cout << "Cargando datos 100%" << endl;
 
@@ -317,7 +317,7 @@ int main(){
 		return result;
 	}
 
-	result = ma_sound_init_from_file(&engine, "../Asets/Audios/RPG_proyecto.mp3", 0, NULL, NULL, &sound);
+	result = ma_sound_init_from_file(&engine, "../assets/Audios/RPG_proyecto.mp3", 0, NULL, NULL, &sound);
 	if (result != MA_SUCCESS){
 		return result;
 	}
