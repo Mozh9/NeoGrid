@@ -3,6 +3,13 @@
 /*Terminar movimientoJugador(){} linea: 196
  * Creo que al final de reaccionar input pestana 2 hay que agregar una función que se asegure la camara no intente salirse del mapa*/
 
+#ifdef __ANDROID__
+    // Si estamos en Termux/Android, apagamos los servidores de audio de escritorio
+    #define MA_NO_PULSEAUDIO
+    #define MA_NO_ALSA
+    #define MA_NO_JACK
+#endif
+
 #define MINIAUDIO_IMPLEMENTATION
 #include "../include/miniaudio.h"
 #include <iostream>
