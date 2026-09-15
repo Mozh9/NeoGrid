@@ -1,16 +1,14 @@
-
-cmake_minimum_required(VERSION 3.10)
-project(MiJuegoMultiplataforma LANGUAGES CXX)
+cmake_minimum_required(VERSION 3.15)
+project(MiJuegoTerminal VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# El ejecutable de tu juego
-add_executable(MiJuego main.cpp)
+# EN LUGAR DE GLOB: Listas tus archivos a mano. 
+# Cuando agregues jugador.cpp, solo lo escribes aquí al lado.
+add_executable(MiJuego 
+    src/main.cpp
+)
 
-# Configuración para crear el instalador de Windows
-install(TARGETS MiJuego DESTINATION bin)
-set(CPACK_PACKAGE_NAME "MiJuegoTerminal")
-set(CPACK_PACKAGE_VENDOR "TuNombre")
-set(CPACK_PACKAGE_VERSION "1.0.0")
-include(CPack)
+target_include_directories(MiJuego PUBLIC include)
+
