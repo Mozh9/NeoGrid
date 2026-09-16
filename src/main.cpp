@@ -2,16 +2,16 @@
 
 /*Terminar movimientoJugador(){} linea: 196
  * Creo que al final de reaccionar input pestana 2 hay que agregar una función que se asegure la camara no intente salirse del mapa*/
-
+/*
 #ifdef __ANDROID__
     // Si estamos en Termux/Android, apagamos los servidores de audio de escritorio
     #define MA_NO_PULSEAUDIO
     #define MA_NO_ALSA
     #define MA_NO_JACK
-#endif
+#endif*/
 
 #define MINIAUDIO_IMPLEMENTATION
-#include "../include/miniaudio.h"
+#include "miniaudio.h"
 #include <iostream>
 #include <cstdlib>
 #include <vector>
@@ -125,11 +125,11 @@ void cargarDatos(){
 	//pantalla de carga
 	cout << "Cargando datos 0%" << endl;
 
-	archivoTxtA_Vector("../assets/Menu.txt", mapaMenu);
+	archivoTxtA_Vector("assets/Menu.txt", mapaMenu);
 	cout << "Menu Cargado" << endl;
 	cout << "Cargando datos 50%" << endl;
 
-	archivoTxtA_Vector("../assets/Mapa.txt", tileMap);
+	archivoTxtA_Vector("assets/Mapa.txt", tileMap);
 	cout << "TileMap Cargado" << endl;
 	cout << "Cargando datos 100%" << endl;
 
@@ -144,7 +144,11 @@ void dibujarMapPantalla(const Camara& posicionCamara, const vector<vector<char>>
 	cout << posicionCamara.finalY << endl;
 	cout << posicionCamara.inicioX << endl;
 	cout << posicionCamara.finalX << endl;*/
+#ifdef _WIN32
+	std::system("cls");
+#else
 	std::system("clear");
+#endif
 	for(int numeroFila = posicionCamara.inicioY; numeroFila <= posicionCamara.finalY; numeroFila++){
 
 		for(int numeroColumna = posicionCamara.inicioX; numeroColumna <= posicionCamara.finalX; numeroColumna++){
@@ -324,7 +328,7 @@ int main(){
 		return result;
 	}
 
-	result = ma_sound_init_from_file(&engine, "../assets/Audios/RPG_proyecto.mp3", 0, NULL, NULL, &sound);
+	result = ma_sound_init_from_file(&engine, "assets/audios/RPG_proyecto.mp3", 0, NULL, NULL, &sound);
 	if (result != MA_SUCCESS){
 		return result;
 	}
