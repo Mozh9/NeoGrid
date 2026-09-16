@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # 1. Definir el ejecutable
 add_executable(MiJuego 
-    src/main.cpp
+	src/neoMain.cpp
+	# Luego cambiar por main.cpp cuando todo funcione adecuadamente
 )
 
 # 2. Configurar el directorio de inclusión de cabeceras
