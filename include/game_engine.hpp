@@ -1,5 +1,4 @@
 //here you define the classes, structs and functions that work in game_engine.cpp
-class GameEngine {
 
 #pragma once
 
@@ -7,7 +6,7 @@ class GameEngine{
 
 private:
 
-	bool isOff;
+	bool isOn;
 
 public:
 

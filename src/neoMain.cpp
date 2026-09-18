@@ -13,19 +13,18 @@
 
 //ÚLTIMA COSA QUE HACER: CREAR OBJETO de game_engine.hpp, ponerlo aquí llamar a sus funciones; (probar que CMake haga su chamba)
 
-#include"include/game_engine.hpp"
+#include"game_engine.hpp"
 
 int main (){
-	//Only the universal stuff a program does: ask for input, process it and print a result
-	//General idea of how it will work
-
-	//GameEngine engine;
-	//engine.init();
-	//engine.load();
-	//engine.run();
-	//engine.end();
+	//Only the universal stuff a program does: ask for input, process it and print a result	
 	
-	std::cout << "El programa funciona, cMake no hizo nada raro" << std::endl;
+	GameEngine engine;
+
+	engine.init();
+	engine.load();
+	engine.run();
+	engine.end();
+	
 
 	return 0;
 }
