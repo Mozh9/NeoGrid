@@ -7,4 +7,13 @@
  * also like saing in wich part of the code
  * the debuging is happening and all that stuff*/
 
-#include
+#pragma once
+
+#include "debug_sistem.hpp"
+#include <string>
+
+// Macros to generte new logs
+#define ADD_GENERAL_LOG(msg)
+#define ADD_TEST_LOG(msg)
+
+// To do: create the class of debug_sistem.hpp in this file
