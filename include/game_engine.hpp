@@ -1,18 +1,16 @@
-//here you define the classes, structs and functions that work in game_engine.cpp
+// here you define the classes, structs and functions that work in
+// game_engine.cpp
 
 #pragma once
 
-class GameEngine{
+class GameEngine {
 
 private:
-
-	bool isOn;
+  bool isOn;
 
 public:
-
-	void init();
-	void load();
-	void run();
-	void end();
-
+  void init();
+  void load();
+  void run();
+  void end();
 };

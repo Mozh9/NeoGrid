@@ -1,4 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 project(MiJuegoTerminal VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -8,6 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(MiJuego 
 	src/neoMain.cpp
 	src/game_engine.cpp
+  src/debug_sistem.cpp
 	# Luego cambiar por main.cpp cuando todo funcione adecuadamente
 )
 
