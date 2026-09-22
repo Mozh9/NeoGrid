@@ -1,8 +1,6 @@
 /*header de debug_sistem.cpp*/
 
-class DebugSistem {
+#pragma once
+#include <string>
 
-private:
-public:
-  // funciones para agregar logs
-};
+void addGeneralLog(std::string msg);
