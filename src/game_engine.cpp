@@ -23,9 +23,8 @@ void GameEngine::run() {
   while (isOn) {
     // Get player input
     // Process player input
-    // Print results
-
-    // cout << "Presiona enter para seguir" << endl;
+    // Print results (and debuging)
+    // printLogs();
     cin.get();
     isOn = false;
   }
