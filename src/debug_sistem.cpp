@@ -30,14 +30,24 @@ private:
   Debuging() = default;
 
 public:
+  Debuging(const Debuging &) = delete;
+  Debuging &operator=(const Debuging &) = delete;
+
   static Debuging &getInstance() {
     static Debuging instance;
     return instance;
   }
 
-  void addGeneralLog() {}
+  void addGeneralLog(std::string file, int line, std::string message) {
+    logList.emplace_back(Log{file, line, message});
+  }
 
-  void printGeneralLogs() {}
+  void printGeneralLogs() const {
+    for (const auto &log : logList) {
+      std::cout << log.file << " " << std::to_string(log.line) << " "
+                << log.message << "\n";
+    }
+  }
 };
 
 // To do: create the class of debug_sistem.hpp in this file
