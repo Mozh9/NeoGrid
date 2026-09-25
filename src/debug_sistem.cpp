@@ -14,25 +14,30 @@
 
 /* Macros to generte new logs
 #define ADD_TEST_LOG(msg)*/
+// Test, I don't know what I'm doing
 
-struct LogDefinition {
+struct Log {
 
   std::string file;
-  std::string mesage;
   int line;
+  std::string message;
 };
 
 class Debuging {
 
 private:
+  std::vector<Log> logList;
+  Debuging() = default;
+
 public:
-  static void addGeneralLog(std::string file,
-                            std::vector<logDefinition> logList) {}
+  static Debuging &getInstance() {
+    static Debuging instance;
+    return instance;
+  }
 
-}
+  void addGeneralLog() {}
 
-#define ADD_GENERAL_LOG(msg) ;
-
-// Test, I don't know what I'm doing
+  void printGeneralLogs() {}
+};
 
 // To do: create the class of debug_sistem.hpp in this file
