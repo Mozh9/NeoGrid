@@ -4,8 +4,6 @@
 #include <iostream>
 
 using std::cin;
-using std::cout;
-using std::endl;
 
 void GameEngine::init() {
   // cout << "[DEBUG] [GameEngine::init] Initializing game" << endl;

@@ -15,6 +15,8 @@
 /* Macros to generte new logs
 #define ADD_TEST_LOG(msg)*/
 // Test, I don't know what I'm doing
+#define ADD_GENERAL_LOG(msg)                                                   \
+  Debugging::getInstance().addGeneralLog(__FILE__, __LINE__, (msg))
 
 struct Log {
 
@@ -23,18 +25,18 @@ struct Log {
   std::string message;
 };
 
-class Debuging {
+class Debugging {
 
 private:
   std::vector<Log> logList;
-  Debuging() = default;
+  Debugging() = default;
 
 public:
-  Debuging(const Debuging &) = delete;
-  Debuging &operator=(const Debuging &) = delete;
+  Debugging(const Debugging &) = delete;
+  Debugging &operator=(const Debugging &) = delete;
 
-  static Debuging &getInstance() {
-    static Debuging instance;
+  static Debugging &getInstance() {
+    static Debugging instance;
     return instance;
   }
 
@@ -44,8 +46,7 @@ public:
 
   void printGeneralLogs() const {
     for (const auto &log : logList) {
-      std::cout << log.file << " " << std::to_string(log.line) << " "
-                << log.message << "\n";
+      std::cout << log.file << " " << log.line << " " << log.message << "\n";
     }
   }
 };
