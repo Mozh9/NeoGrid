@@ -15,15 +15,6 @@
 /* Macros to generte new logs
 #define ADD_TEST_LOG(msg)*/
 // Test, I don't know what I'm doing
-#define ADD_GENERAL_LOG(msg)                                                   \
-  Debugging::getInstance().addGeneralLog(__FILE__, __LINE__, (msg))
-
-struct Log {
-
-  std::string file;
-  int line;
-  std::string message;
-};
 
 class Debugging {
 
