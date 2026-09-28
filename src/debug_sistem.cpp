@@ -16,27 +16,14 @@
 #define ADD_TEST_LOG(msg)*/
 // Test, I don't know what I'm doing
 
-class Debugging {
+void Debugging::addGeneralLog(std::string file, int line, std::string message) {
+  logList.emplace_back(Log{file, line, message});
+}
 
-private:
-public:
-  Debugging(const Debugging &) = delete;
-  Debugging &operator=(const Debugging &) = delete;
-
-  static Debugging &getInstance() {
-    static Debugging instance;
-    return instance;
+void Debugging::printGeneralLogs() const {
+  for (const auto &log : logList) {
+    std::cout << log.file << " " << log.line << " " << log.message << "\n";
   }
-
-  void addGeneralLog(std::string file, int line, std::string message) {
-    logList.emplace_back(Log{file, line, message});
-  }
-
-  void printGeneralLogs() const {
-    for (const auto &log : logList) {
-      std::cout << log.file << " " << log.line << " " << log.message << "\n";
-    }
-  }
-};
+}
 
 // To do: create the class of debug_sistem.hpp in this file

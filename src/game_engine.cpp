@@ -6,28 +6,27 @@
 using std::cin;
 
 void GameEngine::init() {
-  // cout << "[DEBUG] [GameEngine::init] Initializing game" << endl;
+  ADD_GENERAL_LOG("Initializing game");
   isOn = true;
   // cout << "[DEBUG] [GameEngine::init] isOn = " << isOn << endl;
 }
 
-void GameEngine::load() {
-  // cout << "[DEBUG] [GameEngine::load] Loading game" << endl;
-}
+void GameEngine::load() { ADD_GENERAL_LOG("Loading game"); }
 
 void GameEngine::run() {
-  // cout << "[DEBUG] [GameEngine::run] Runing game" << endl;
+  ADD_GENERAL_LOG("Game Runing");
 
   while (isOn) {
     // Get player input
     // Process player input
     // Print results (and debuging)
-    // printLogs();
     cin.get();
     isOn = false;
+    Debugging::getInstance().printGeneralLogs();
   }
 }
 
 void GameEngine::end() {
-  addGeneralLog("[DEBUG] [GameEngine::end] Ending game");
+  ADD_GENERAL_LOG("Game ending");
+  // Debugging::getInstance().printGeneralLogs();
 }

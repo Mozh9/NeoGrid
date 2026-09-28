@@ -21,4 +21,15 @@ private:
   Debugging() = default;
 
 public:
+  Debugging(const Debugging &) = delete;
+  Debugging &operator=(const Debugging &) = delete;
+
+  static Debugging &getInstance() {
+    static Debugging instance;
+    return instance;
+  }
+
+  void addGeneralLog(std::string file, int line, std::string message);
+
+  void printGeneralLogs() const;
 };
