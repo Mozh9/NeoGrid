@@ -19,9 +19,6 @@
 class Debugging {
 
 private:
-  std::vector<Log> logList;
-  Debugging() = default;
-
 public:
   Debugging(const Debugging &) = delete;
   Debugging &operator=(const Debugging &) = delete;

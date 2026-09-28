@@ -2,6 +2,7 @@
 
 #pragma once
 #include <string>
+#include <vector>
 
 #define ADD_GENERAL_LOG(msg)                                                   \
   Debugging::getInstance().addGeneralLog(__FILE__, __LINE__, (msg))
@@ -11,4 +12,13 @@ struct Log {
   std::string file;
   int line;
   std::string message;
+};
+
+class Debugging {
+
+private:
+  std::vector<Log> logList;
+  Debugging() = default;
+
+public:
 };
