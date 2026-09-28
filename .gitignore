@@ -76,6 +76,9 @@ crashlytics-build.properties
 
 #----------mis gitignore---------
 
+#Cache de CMake
+/.cache/
+
 # Carpetas de compilación e intermedias
 /build/
 /build*/
