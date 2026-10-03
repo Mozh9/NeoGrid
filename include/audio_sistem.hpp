@@ -8,7 +8,7 @@ class AudioSystem {
 private:
   ma_result result;
   ma_engine engine;
-  ma_sound sound;
+  ma_sound sound; // encapsulsr esto en un struct para agregar metadatos
 
   AudioSystem() {}
 
@@ -24,5 +24,5 @@ public:
   bool initAudioSystem();
   void destroyAudioSystem();
 
-  int startSound();
+  bool startSound();
 };

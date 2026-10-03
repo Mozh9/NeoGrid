@@ -1,13 +1,18 @@
 // sistema de audio por miniaudio
+#include <string>
 #define MINIAUDIO_IMPLEMENTATION
 #include "audio_sistem.hpp"
+#include "debug_sistem.hpp"
 #include "miniaudio.h"
 
 bool AudioSystem::initAudioSystem() {
+
   result = ma_engine_init(NULL, &engine);
   if (result != MA_SUCCESS) {
     return result;
   }
+
+  ADD_GENERAL_LOG("Result initAudioSystem = " + std::to_string(result));
 
   return true;
 }
@@ -16,7 +21,7 @@ void AudioSystem::destroyAudioSystem() {
   // luego ponerlo
 }
 
-int AudioSystem::startSound() {
+bool AudioSystem::startSound() {
   result = ma_sound_init_from_file(&engine, "assets/audios/RPG_proyecto.mp3", 0,
                                    NULL, NULL, &sound);
 
@@ -24,7 +29,10 @@ int AudioSystem::startSound() {
     return result;
   }
 
+  ADD_GENERAL_LOG("Result init sound from file = " + std::to_string(result));
+
   ma_sound_start(&sound);
 
-  return 1;
+  ADD_GENERAL_LOG("intro starting");
+  return true;
 }
