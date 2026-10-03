@@ -10,6 +10,7 @@ add_executable(MiJuego
 	src/neoMain.cpp
 	src/game_engine.cpp
   src/debug_sistem.cpp
+  src/audio_sistem.cpp
 	# Luego cambiar por main.cpp cuando todo funcione adecuadamente
 )
 
