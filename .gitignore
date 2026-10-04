@@ -84,8 +84,10 @@ crashlytics-build.properties
 /build*/
 /out/
 /CMakeSettings.json
+compile_commands.json
 
 # Archivos de caché y configuración local de CMake
 /CMakeUserPresets.json
 /.cmake/
+
 
