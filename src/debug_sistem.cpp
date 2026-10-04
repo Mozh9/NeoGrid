@@ -21,13 +21,22 @@ void Debugging::addLog(std::string file, int line, std::string message,
   logList.emplace_back(Log{file, line, message, type});
 }
 
-void Debugging::printGeneralLogs() const {
-  for (int i = 0; i <= logList.size() - 1; i++) {
+void Debugging::checkWichLogsToPrint(int index, int debugType) const {
+  if (typeOfDebugging == debugType && logList[index].type == debugType) {
+    std::cout << logList[index].file << "" << logList[index].line << " "
+              << logList[index].message << "\n";
+  }
+}
 
-    if (typeOfDebugging == 1 && logList[i].type == 1) {
-      std::cout << logList[i].file << " " << logList[i].line << " "
-                << logList[i].message << "\n";
-    }
+void Debugging::printLogs() const {
+
+  for (int i = 0; i <= logList.size() - 1; i++) {
+    // General logs
+    Debugging::checkWichLogsToPrint(i, 1);
+    // Init logs
+    Debugging::checkWichLogsToPrint(i, 2);
+    // Audio logs
+    Debugging::checkWichLogsToPrint(i, 3);
   }
 }
 

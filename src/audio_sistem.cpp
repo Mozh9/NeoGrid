@@ -12,7 +12,7 @@ bool AudioSystem::initAudioSystem() {
     return result;
   }
 
-  ADD_GENERAL_LOG("Result initAudioSystem = " + std::to_string(result));
+  ADD_INIT_LOG("Result initAudioSystem = " + std::to_string(result));
 
   return true;
 }
@@ -29,10 +29,10 @@ bool AudioSystem::startSound() {
     return result;
   }
 
-  ADD_GENERAL_LOG("Result init sound from file = " + std::to_string(result));
+  ADD_INIT_LOG("Result init sound from file = " + std::to_string(result));
 
   ma_sound_start(&sound);
 
-  ADD_GENERAL_LOG("intro starting");
+  ADD_SOUND_LOG("intro starting");
   return true;
 }
