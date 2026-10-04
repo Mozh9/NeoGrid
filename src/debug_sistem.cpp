@@ -16,13 +16,27 @@
 #define ADD_TEST_LOG(msg)*/
 // Test, I don't know what I'm doing
 
-void Debugging::addGeneralLog(std::string file, int line, std::string message) {
-  logList.emplace_back(Log{file, line, message});
+void Debugging::addLog(std::string file, int line, std::string message,
+                       int type) {
+  logList.emplace_back(Log{file, line, message, type});
 }
 
-void Debugging::printGeneralLogs() const {
-  for (const auto &log : logList) {
-    std::cout << log.file << " " << log.line << " " << log.message << "\n";
+void Debugging::checkWichLogsToPrint(int index, int debugType) const {
+  if (typeOfDebugging == debugType && logList[index].type == debugType) {
+    std::cout << logList[index].file << "" << logList[index].line << " "
+              << logList[index].message << "\n";
+  }
+}
+
+void Debugging::printLogs() const {
+
+  for (int i = 0; i <= logList.size() - 1; i++) {
+    // General logs
+    Debugging::checkWichLogsToPrint(i, 1);
+    // Init logs
+    Debugging::checkWichLogsToPrint(i, 2);
+    // Audio logs
+    Debugging::checkWichLogsToPrint(i, 3);
   }
 }
 

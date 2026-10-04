@@ -3,13 +3,14 @@
 #include "audio_sistem.hpp"
 #include "debug_sistem.hpp"
 #include <iostream>
+#include <string>
 
 using std::cin;
 
 void GameEngine::init() {
   ADD_GENERAL_LOG("Initializing game");
   isOn = true;
-  // cout << "[DEBUG] [GameEngine::init] isOn = " << isOn << endl;
+  ADD_INIT_LOG("isOn = " + std::to_string(isOn))
   AudioSystem::get().initAudioSystem();
 }
 
@@ -25,7 +26,7 @@ void GameEngine::run() {
     AudioSystem::get().startSound();
     cin.get();
     isOn = false;
-    Debugging::getInstance().printGeneralLogs();
+    Debugging::getInstance().printLogs();
   }
 }
 
