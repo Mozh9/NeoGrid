@@ -5,11 +5,9 @@
 
 class GameElement {
 private:
+  std::string nameTag;
+  std::vector<std::string> componentList;
+
 public:
   GameElement() {}
-
-  struct VisualElement {};
-
-  void createVisualElement(std::string elementName);
-  void loadTxtToVisualElement(std::string elementName, std::string fileName);
 };
