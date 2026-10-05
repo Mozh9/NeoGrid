@@ -3,18 +3,10 @@
 #include <string>
 #include <vector>
 
-class VideoSystem {
+class GameElement {
 private:
-  VideoSystem() {}
-
 public:
-  VideoSystem(const VideoSystem &) = delete;
-  VideoSystem &operator=(const VideoSystem &) = delete;
-
-  static VideoSystem &get() {
-    static VideoSystem instance;
-    return instance;
-  }
+  GameElement() {}
 
   struct VisualElement {};
 
